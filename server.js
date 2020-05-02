@@ -12,13 +12,13 @@ server.listen(3000, () => {
   console.log('The HTTP server is listening at Port 3000.');
 });
 
-getAllMessages = (response) => {
+const getAllMessages = (response) => {
   response.writeHead(200, { 'Content-Type': 'text/plain' });
   response.write(JSON.stringify(messages));
   response.end();
 }
 
-addMessage = (newMessage, response) => {
+const addMessage = (newMessage, response) => {
   messages.push(newMessage);
   response.writeHead(201, { 'Content-Type': 'application/json' });
   response.write(JSON.stringify(newMessage));
